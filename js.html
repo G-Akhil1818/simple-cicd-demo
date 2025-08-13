@@ -1,0 +1,15 @@
+// Show a welcome message when the page loads
+window.onload = function () {
+  alert("Welcome to My Website!");
+};
+
+// Add click effect to navigation links
+const navLinks = document.querySelectorAll("nav ul li a");
+
+navLinks.forEach(link => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault(); // stop the page from jumping
+    navLinks.forEach(l => l.classList.remove("active"));
+    this.classList.add("active");
+  });
+});
